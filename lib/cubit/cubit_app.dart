@@ -21,7 +21,7 @@ class AppCubit extends Cubit<CubitStates> {
     DioHelper.getData(
       url: 'https://flutter-test-api.herokuapp.com/',
     ).then((value){
-      productModel = ProductModel.fromJson(value.data[0]);
+      productModel = ProductModel.fromJson(value.data[1]);
       //print(productModel!.title);
       print(value.data);
       // productModel!.forEach((element)

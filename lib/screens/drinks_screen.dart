@@ -92,7 +92,7 @@ Widget buildProductGrid(ProductModel productModel , context)
     crossAxisCount: 2,
     mainAxisSpacing: 5.0,
     crossAxisSpacing: 5.0,
-    childAspectRatio: 1 / 1.59,
+    childAspectRatio: 1.2 / 1.3,
     children: List.generate(
         productModel.title!.length,
             (index) => cardProduct(AppCubit.get(context).productModel!, context)
@@ -116,10 +116,14 @@ Widget cardProduct(ProductModel model,context)
             alignment: Alignment.topRight,
             child: Image.asset('assets/images/non_fav.png', height: 20, width: 20,),
           ),
-          Container(
-              height: 80,
-              width: 40,
-              child: helpImage('${model.avatar}', 0.0)
+          Expanded(
+            child: Center(
+              child: Container(
+                  height: 80,
+                  width: 40,
+                  child: helpImage('${model.avatar}', 0.0)
+              ),
+            ),
           ),
           SizedBox(
             height: 5,
